@@ -1,0 +1,16 @@
+.mat-form-field {
+    margin-top: 16px;
+  }
+
+  .config_form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.form-btn{
+  float: right;
+}
+
+.form-btn button{
+  margin: 0em 2em;
+}

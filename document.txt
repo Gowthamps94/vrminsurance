@@ -1,0 +1,5 @@
+run backend: npm start
+run frontend: ng s
+pgadmin server pass: Palanisamy94$
+pgadmin db postgresSQL12 pass: Palanisamy94$
+

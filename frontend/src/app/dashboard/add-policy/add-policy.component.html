@@ -1,0 +1,177 @@
+<div class="col main pt-5 mt-3">
+    <h1 class="display-6 d-none d-sm-block">
+        Add Policy
+    </h1>
+
+    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Fill out customer details</ng-template>
+                <div class="config_form">
+                    
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input matInput formControlName="fname" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput formControlName="lname" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Group</mat-label>
+                            <input matInput formControlName="group">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Contact Number</mat-label>
+                            <input type="number" matInput formControlName="contactNo" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Alternate Contact No</mat-label>
+                            <input type="number" matInput formControlName="altContactNo" >
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <input matInput formControlName="address" required>
+                        </mat-form-field>
+                    </p>                  
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Reference</mat-label>
+                            <input matInput formControlName="reference" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email Id</mat-label>
+                            <input matInput formControlName="emailId" >
+                        </mat-form-field>
+                    </p>
+                </div>
+
+                <div class="form-btn">
+                    <button mat-button mat-raised-button color="primary" matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Fill out Vehicle Details</ng-template>
+                <div class="config_form">
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Vehicle Type</mat-label>
+                            <mat-select matInput formControlName="vehicleType" required>
+                                <mat-option *ngFor="let type of vehicleType" [value]="type"> {{type}} </mat-option>
+                            </mat-select>    
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Vehicle Name</mat-label>
+                            <input matInput formControlName="vehicleName" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Vehicle No</mat-label>
+                            <input matInput formControlName="vehicleNo" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Model NO</mat-label>
+                            <input matInput formControlName="modelNo" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Purpose</mat-label>
+                            <input matInput formControlName="purpose" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>CC/gvw/sc</mat-label>
+                            <input matInput formControlName="capacity" required>
+                        </mat-form-field>
+                    </p>
+                </div>
+                <div class="form-btn"> 
+                    <button mat-button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                    <button mat-button mat-raised-button color="primary" matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Fill out policy Details</ng-template>
+                <div class="config_form">
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Policy Type</mat-label>
+                            <input matInput formControlName="policyType" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>IDV</mat-label>
+                            <input matInput formControlName="idv" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>INS Company</mat-label>
+                            <input matInput formControlName="insCompany" required>
+                        </mat-form-field>
+                    </p>
+
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Create Date</mat-label>
+                            <input matInput [matDatepicker]="picker1" formControlName="createDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Renewal Date</mat-label>
+                            <input matInput [matDatepicker]="picker2" formControlName="renewalDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Policy Amount</mat-label>
+                            <input matInput formControlName="policyAmount" required>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Paid Amount</mat-label>
+                            <input matInput formControlName="paidAmount" required>
+                        </mat-form-field>
+                    </p>                    
+                </div>
+            </form>
+            <div class="form-btn"> 
+                <button mat-button color="primary" matStepperPrevious mat-raised-button>Back</button>
+                <button mat-button color="primary" mat-raised-button [disabled]="!firstFormGroup.valid || !secondFormGroup.valid || !thirdFormGroup.valid " (click)="onSubmit()">Save</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+
+
+</div>
